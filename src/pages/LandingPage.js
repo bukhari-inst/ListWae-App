@@ -1,11 +1,15 @@
 import React from 'react';
-import HomePage from 'pages/HomePage';
+import Button from 'elements/Button';
 
 export const LandingPage = ({ currentUser }) => {
   return (
-    <div>
-      {currentUser && <HomePage />}
-      {!currentUser && <h1>masuk dulu</h1>}
+    <div className="text-center">
+      Landing Page
+      <div className="d-flex justify-content-center">
+        <Button className="btn px-5 " href="/login" type="link" isPrimary>
+          Login
+        </Button>
+      </div>
     </div>
   );
 };

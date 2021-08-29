@@ -9,6 +9,7 @@ export const SigninPage = (props) => {
   const [password, setPassword] = useState('');
 
   const [loginError, setLoginError] = useState('');
+  const [resetError, setResetError] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -22,6 +23,16 @@ export const SigninPage = (props) => {
       })
       .catch((err) => setLoginError(err.message));
   };
+
+  function sendPasswordReset() {
+    auth
+      .sendPasswordResetEmail(email)
+      .then(() => {
+        alert('Please check your email...');
+      })
+      .catch((error) => setResetError(error.message));
+    // [END auth_send_password_reset]
+  }
 
   return (
     <Fade top delay={300}>
@@ -83,9 +94,9 @@ export const SigninPage = (props) => {
 
                   <div className="text-right" style={{ width: 420 }}>
                     <Button
-                      href="https://www.tokopedia.com/order-list"
+                      className="cursor-pointer"
+                      onClick={(e) => sendPasswordReset(email)}
                       type="link"
-                      isExternal
                     >
                       {' '}
                       Lupa kata sandi?
@@ -105,6 +116,7 @@ export const SigninPage = (props) => {
                   </Button>
                 </form>
                 {loginError && <div className="error-msg">{loginError}</div>}
+                {resetError && <div className="error-msg">{resetError}</div>}
               </div>
             </Fade>
           </div>

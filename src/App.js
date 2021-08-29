@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { auth, db } from 'config/Firebase';
-import LandingPage from 'pages/LandingPage';
+import { SwitchPage } from 'pages/SwitchPage';
 // import { HomePage } from 'pages/HomePage';
 import { SignupPage } from 'pages/SignupPage';
 import { SigninPage } from 'pages/SigninPage';
@@ -37,7 +37,7 @@ export class App extends Component {
             exact
             path="/"
             component={() => (
-              <LandingPage currentUser={this.state.currentUser} />
+              <SwitchPage currentUser={this.state.currentUser} />
             )}
           />
           {/* <Route exact path="/HomePage" component={HomePage} /> */}
