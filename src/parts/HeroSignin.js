@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageHero from 'assets/images/hero-loginpage.svg';
+import ImageHero from 'assets/images/heroSignup.svg';
 import ImageArt from 'assets/images/art-loginpage.svg';
 import ImageArt_ from 'assets/images/art2-loginpage.svg';
 
@@ -18,16 +18,16 @@ export default function HeroSignup() {
               style={{ width: 333, marginTop: 60 }}
             />
           </div>
-          <div className="mt-5">
-            <h1 className="text-center text-white font-weight-normal line-height-1">
-              {' '}
-              Buat List Kebutuhanmu <br /> Sekarang Juga
+          <div>
+            <h1 className="text-center mt-5 text-white font-weight-normal line-height-1">
+              Dapatkan Informasi Terkait <br /> List Kebutuhanmu
             </h1>
           </div>
-          <div className="mt-3">
-            <h5 className="text-center text-gray-300 font-weight-lighter line-height-1">
-              Kamu Dapat Dengan Mudah Membuat List <br /> Kebutuhan Dengan
-              Efektif Dan Efesien
+          <div>
+            <h5 className="text-center mt-3 text-gray-300 font-weight-lighter line-height-1">
+              Kamu Akan Mendapatkan Informasi Berupa <br /> Estimasi Biaya
+              Pengeluaran Dan Langkah <br /> Yang Sedang Kamu Lakukan dan
+              efesien
             </h5>
           </div>
           <div className="d-flex justify-content-end my-4">

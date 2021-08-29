@@ -16,55 +16,69 @@ export const SignupPage = (props) => {
 
           <div className="col bg-white d-flex justify-content-center">
             <Fade bottom delay={500}>
-              <div classNameName="container ml-5">
-                <div
-                  classNameName="text-gray-800 font-weight-normal"
-                  style={{ fontSize: 24, marginTop: 150 }}
-                >
-                  Daftarkan akun anda
+              <div className="container ml-5">
+                <div style={{ marginTop: 150 }}>
+                  <h1 className="text-gray-800 font-weight-light">
+                    Daftarkan Akun Anda
+                  </h1>
                 </div>
-                <div
-                  classNameName="text-gray-800 font-weight-normal "
-                  style={{ fontSize: 18, marginTop: 8, marginBottom: 16 }}
-                >
-                  Silahkan isi form pendaftaran untuk masuk ke akun anda
+                <div>
+                  <h3 className="text-gray-600 font-weight-normal my-3">
+                    Silahkan Isi Form Pendaftaran Untuk Masuk Ke Akun Anda
+                  </h3>
                 </div>
                 <form>
                   <div className="form-group">
-                    <label for="Name">Nama Lengkap</label>
+                    <label for="Name">
+                      <h3 className="text-gray-800 font-weight-lighter ">
+                        Nama Lengkap
+                      </h3>
+                    </label>
                     <input
                       type="text"
                       className="form-control"
                       id="Name"
-                      placeholder="Enter Name"
+                      placeholder="Please type here..."
                     />
                   </div>
                   <div className="form-group">
-                    <label for="exampleInputEmail1">Alamat Email</label>
+                    <label for="exampleInputEmail1">
+                      <h3 className="text-gray-800 font-weight-lighter ">
+                        Alamat Email
+                      </h3>
+                    </label>
                     <input
                       type="email"
                       className="form-control"
                       id="exampleInputEmail1"
                       aria-describedby="emailHelp"
-                      placeholder="Enter email"
+                      placeholder="Please type here..."
                     />
                   </div>
                   <div className="form-group">
-                    <label for="Name">Nomor Telephone</label>
+                    <label for="Name">
+                      <h3 className="text-gray-800 font-weight-lighter ">
+                        Nomor Telephone
+                      </h3>
+                    </label>
                     <input
                       type="text"
                       className="form-control"
                       id="Name"
-                      placeholder="Enter Name"
+                      placeholder="Please type here..."
                     />
                   </div>
                   <div className="form-group">
-                    <label for="exampleInputPassword1">Kata Sandi</label>
+                    <label for="exampleInputPassword1">
+                      <h3 className="text-gray-800 font-weight-lighter ">
+                        Kata Sandi
+                      </h3>
+                    </label>
                     <input
                       type="password"
                       className="form-control"
                       id="exampleInputPassword1"
-                      placeholder="Password"
+                      placeholder="Please type here..."
                     />
                   </div>
 
@@ -81,9 +95,16 @@ export const SignupPage = (props) => {
                   >
                     Daftar
                   </Button>
-                  <div className="text-center" style={{ width: 420 }}>
+                  <div
+                    className="text-center h3 font-weight-lighter"
+                    style={{ width: 420 }}
+                  >
                     Sudah mempunyai akun?
-                    <Button href="/login" type="link">
+                    <Button
+                      href="/login"
+                      type="link"
+                      className="font-weight-normal"
+                    >
                       {' '}
                       Masuk
                     </Button>
