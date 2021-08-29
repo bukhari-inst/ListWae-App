@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HeroSignin from 'parts/HeroSignin';
 import Button from 'elements/Button';
 import Fade from 'react-reveal/Fade';
+import { auth } from 'config/Firebase';
 
-export const SigninPage = () => {
+export const SigninPage = (props) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const [loginError, setLoginError] = useState('');
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        setEmail('');
+        setPassword('');
+        setLoginError('');
+        props.history.push('/');
+      })
+      .catch((err) => setLoginError(err.message));
+  };
+
   return (
     <Fade top delay={300}>
       <div>
@@ -28,7 +47,7 @@ export const SigninPage = () => {
                     Pendaftaran Akun
                   </h3>
                 </div>
-                <form>
+                <form onSubmit={handleLogin}>
                   <div className="form-group">
                     <label for="Name" className="mb-0">
                       <h3 className="text-gray-800 font-weight-lighter ">
@@ -40,6 +59,9 @@ export const SigninPage = () => {
                       className="form-control"
                       id="Name"
                       placeholder="Please type here..."
+                      required
+                      onChange={(e) => setEmail(e.target.value)}
+                      value={email}
                     />
                   </div>
                   <div className="form-group">
@@ -53,6 +75,9 @@ export const SigninPage = () => {
                       className="form-control"
                       id="exampleInputPassword1"
                       placeholder="Please type here..."
+                      required
+                      onChange={(e) => setPassword(e.target.value)}
+                      value={password}
                     />
                   </div>
 
@@ -79,6 +104,7 @@ export const SigninPage = () => {
                     Masuk
                   </Button>
                 </form>
+                {loginError && <div className="error-msg">{loginError}</div>}
               </div>
             </Fade>
           </div>
