@@ -44,6 +44,12 @@
 @import "utilities";
 @import "print";
 
-.card {
-    border: none;
+.form-group {
+    width: 420px;
+
+    .form-control {
+        height: 50px;
+        margin: 8px 0px 8px 0px;
+        background-color: $gray-300;
+    }
 }
