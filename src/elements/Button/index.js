@@ -40,6 +40,11 @@ export default function Button(props) {
           // target={props.target === '_blank' ? '_blank' : undefined}
           rel={props.style}
           target={props.target === '_blank' ? 'noopener noreferrer' : undefined}
+          id={props.searchDropdown}
+          role={'button'}
+          data-toggle={'dropdown'}
+          aria-haspopup={'true'}
+          aria-expanded={'false'}
         >
           {props.children}
         </a>

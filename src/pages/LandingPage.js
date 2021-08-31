@@ -5,9 +5,12 @@ export const LandingPage = ({ currentUser }) => {
   return (
     <div className="text-center">
       Landing Page
-      <div className="d-flex justify-content-center">
-        <Button className="btn px-5 " href="/login" type="link" isPrimary>
+      <div className="d-flex justify-content-center ">
+        <Button className="btn px-5 mx-2" href="/login" type="link" isPrimary>
           Login
+        </Button>
+        <Button className="btn px-5 " href="/signup" type="link" isPrimary>
+          Signup
         </Button>
       </div>
     </div>

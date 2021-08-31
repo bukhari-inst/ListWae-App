@@ -5,9 +5,9 @@ import Menu from 'parts/Menu';
 
 export const SidebarHomePage = () => {
   return (
-    <>
-      <IconText /> <Dasboard /> <Menu />;
-    </>
+    <ul className="navbar-nav menu-nav sidebar accordion" id="accordionSidebar">
+      <IconText /> <Dasboard /> <Menu />
+    </ul>
   );
 };
 

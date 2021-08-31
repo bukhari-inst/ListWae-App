@@ -2,15 +2,8 @@ import React from 'react';
 
 export const Search = () => {
   return (
-    <div>
-      <button
-        id="sidebarToggleTop"
-        className="btn btn-link d-md-none rounded-circle mr-3 box-shadow-none"
-      >
-        <i className="fa fa-bars"></i>
-      </button>
-      <form
-        className="
+    <form
+      className="
                 d-none d-sm-inline-block
                 form-inline
                 mr-auto
@@ -20,26 +13,25 @@ export const Search = () => {
                 navbar-search
                 wallet-form
               "
-      >
-        <div className="input-group">
-          <div className="curency-money btn">
-            <i className="fas fa-search fa-sm icon-gray"></i>
-          </div>
-          <input
-            type="text"
-            className="form-control bg-light border-0 small"
-            placeholder="Cari daftar kebutuhanmu"
-            aria-label="Search"
-            aria-describedby="basic-addon2"
-          />
-          <div className="input-group-append">
-            <button className="btn bg-unggu" type="button">
-              Cari
-            </button>
-          </div>
+    >
+      <div className="input-group">
+        <div className="curency-money btn">
+          <i className="fas fa-search fa-sm icon-gray"></i>
         </div>
-      </form>
-    </div>
+        <input
+          type="text"
+          className="form-control bg-light border-0 small"
+          placeholder="Cari daftar kebutuhanmu"
+          aria-label="Search"
+          aria-describedby="basic-addon2"
+        />
+        <div className="input-group-append">
+          <button className="btn bg-unggu" type="button">
+            Cari
+          </button>
+        </div>
+      </div>
+    </form>
   );
 };
 

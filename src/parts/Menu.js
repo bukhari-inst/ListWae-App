@@ -15,7 +15,7 @@ export const Menu = () => {
         aria-controls="collapseTwo"
       >
         <i className="fas fa-fw fa-cog"></i>
-        <span>Components</span>
+        <span>Daftar Kebutuhan:</span>
       </Button>
       <div
         id="collapseTwo"
@@ -24,7 +24,7 @@ export const Menu = () => {
         data-parent="#accordionSidebar"
       >
         <div className="bg-white py-2 collapse-inner rounded">
-          <h6 className="collapse-header">Custom Components:</h6>
+          <h6 className="collapse-header">Daftar Kebutuhan:</h6>
           <Button className="collapse-item" type="link" isExternal href="/">
             Buttons
           </Button>

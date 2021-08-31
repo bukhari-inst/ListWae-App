@@ -320,7 +320,7 @@ template {
 [hidden] {
   display: none !important;
 }
-.h1,
+/* .h1,
 .h2,
 .h3,
 .h4,
@@ -359,7 +359,7 @@ h5 {
 .h6,
 h6 {
   font-size: 1rem;
-}
+} */
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
@@ -8813,7 +8813,7 @@ button.bg-dark:hover {
 .text-capitalize {
   text-transform: capitalize !important;
 }
-.font-weight-light {
+/* .font-weight-light {
   font-weight: 300 !important;
 }
 .font-weight-lighter {
@@ -8827,7 +8827,7 @@ button.bg-dark:hover {
 }
 .font-weight-bolder {
   font-weight: bolder !important;
-}
+} */
 .font-italic {
   font-style: italic !important;
 }
