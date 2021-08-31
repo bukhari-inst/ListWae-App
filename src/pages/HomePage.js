@@ -1,18 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Fade from 'react-reveal/Fade';
 import 'assets/scss/home-page.min.css';
 import 'assets/scss/style-listwae.scss';
 import 'assets/vendor/fontawesome-free/css/all.min.css';
-import Sidebar from 'components/SidebarHomePage';
+import Sidebar from 'components/Sidebar';
 import Header from 'components/Header';
-export default class LandingPage extends Component {
-  render() {
-    return (
-      <div id="wrapper">
+import Content from 'components/Content';
+
+export const HomePage = ({ currentUser }) => {
+  return (
+    <div id="wrapper">
+      <Fade delay={400}>
         <Sidebar />
         <div id="content-wrapper" className="d-flex flex-column">
-          <Header />
+          <Header currentUser={currentUser} />
+          <Content />
         </div>
-      </div>
-    );
-  }
-}
+      </Fade>
+    </div>
+  );
+};
+
+export default HomePage;

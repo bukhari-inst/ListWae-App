@@ -5,7 +5,7 @@ import Wallet from 'parts/Wallet';
 import Button from 'elements/Button';
 import profile from 'assets/images/undraw_profile.svg';
 
-export const Header = () => {
+export const Header = ({ currentUser }) => {
   const handleLogout = () => {
     auth.signOut().then(() => {
       window.location.reload();
@@ -122,7 +122,7 @@ export const Header = () => {
             aria-expanded="false"
           >
             <span className="mr-2 d-none d-lg-inline text-gray-600 small">
-              Douglas McGee
+              <h5>{currentUser}</h5>
             </span>
             <img
               className="img-profile rounded-circle"

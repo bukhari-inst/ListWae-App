@@ -3,7 +3,7 @@ import IconText from 'parts/IconText';
 import Dasboard from 'parts/Dasboard';
 import Menu from 'parts/Menu';
 
-export const SidebarHomePage = () => {
+export const Sidebar = () => {
   return (
     <ul className="navbar-nav menu-nav sidebar accordion" id="accordionSidebar">
       <IconText /> <Dasboard /> <Menu />
@@ -11,4 +11,4 @@ export const SidebarHomePage = () => {
   );
 };
 
-export default SidebarHomePage;
+export default Sidebar;

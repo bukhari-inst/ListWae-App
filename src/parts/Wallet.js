@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Wallet = () => {
+export const Wallet = () => {
   return (
     <form
       className="

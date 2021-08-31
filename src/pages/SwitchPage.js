@@ -7,7 +7,7 @@ export const SwitchPage = ({ currentUser }) => {
     <div>
       {currentUser && (
         <>
-          <HomePage />
+          <HomePage currentUser={currentUser} />
         </>
       )}
       {!currentUser && (
