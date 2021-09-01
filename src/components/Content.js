@@ -37,7 +37,8 @@ export const Content = () => {
                     bg-unggu
                   "
             type="link"
-            href="#"
+            href="/inputkebutuhan"
+            s
           >
             <i className="fas fa-plus fa-sm text-white-50"></i> Tambah Daftar
           </Button>
