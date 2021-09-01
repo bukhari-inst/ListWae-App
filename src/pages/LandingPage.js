@@ -1,19 +1,15 @@
 import React from 'react';
+import Header from 'components/landingPage/Header';
 import Fade from 'react-reveal/Fade';
-import Button from 'elements/Button';
+import Hero from 'components/landingPage/Hero';
 
 export const LandingPage = ({ currentUser }) => {
   return (
-    <div className="text-center">
-      Landing Page
+    <div>
       <Fade delay={400}>
-        <div className="d-flex justify-content-center ">
-          <Button className="btn px-5 mx-2" href="/login" type="link" isPrimary>
-            Login
-          </Button>
-          <Button className="btn px-5 " href="/signup" type="link" isPrimary>
-            Signup
-          </Button>
+        <Header />
+        <div className="bg-light">
+          <Hero />
         </div>
       </Fade>
     </div>

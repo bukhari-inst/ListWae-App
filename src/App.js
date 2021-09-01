@@ -4,6 +4,7 @@ import { auth, db } from 'config/Firebase';
 import { SwitchPage } from 'pages/SwitchPage';
 import { SignupPage } from 'pages/SignupPage';
 import { SigninPage } from 'pages/SigninPage';
+import { InputKebutuhan } from 'parts/InputKebutuhan';
 
 export class App extends Component {
   state = {
@@ -41,6 +42,7 @@ export class App extends Component {
           />
           <Route exact path="/signup" component={SignupPage} />
           <Route exact path="/login" component={SigninPage} />
+          <Route exact path="/inputkebutuhan" component={InputKebutuhan} />
         </Switch>
       </Router>
     );
