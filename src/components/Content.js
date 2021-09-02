@@ -37,7 +37,7 @@ export const Content = () => {
                     bg-unggu
                   "
             type="link"
-            href="/inputkebutuhan"
+            href="/judulkebutuhan"
             s
           >
             <i className="fas fa-plus fa-sm text-white-50"></i> Tambah Daftar
