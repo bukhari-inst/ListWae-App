@@ -1,8 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'pages/Kebutuhan/style.css';
 import Button from 'elements/Button';
+import { auth, db } from 'config/Firebase';
 
-export const DetailItems = () => {
+export const DetailItems = (props) => {
+  const [estimasiPengeluaran, setEstimasiPengeluaran] = useState('');
+  const [namaBarang, setNamaBarang] = useState('');
+  const [kuantitas, setKuantitas] = useState('');
+
+  const [Error, setError] = useState('');
+
+  const handleDeatailItemSubmit = (e) => {
+    e.preventDefault();
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        db.collection('detailItem' + id)
+          .add({
+            estimasiPengeluaran: estimasiPengeluaran,
+            namaBarang: namaBarang,
+            kuantitas: kuantitas,
+          })
+          .then(() => {
+            setEstimasiPengeluaran('');
+            setNamaBarang('');
+            setKuantitas('');
+            props.history.push('/selesai');
+          })
+          .catch((err) => setError(err.message));
+      } else {
+        console.log('user is not signed in to add database');
+      }
+    });
+  };
+
   return (
     <div>
       <div className="modal-dialog modal-dialog-centered" role="document">
@@ -53,7 +83,11 @@ export const DetailItems = () => {
                           </li>
                         </ul>
                       </div>
-                      <form role="form" action="" className="login-box">
+                      <form
+                        role="form"
+                        className="login-box"
+                        onSubmit={handleDeatailItemSubmit}
+                      >
                         <div className="tab-content" id="main_form">
                           <div
                             className="tab-pane active"
@@ -84,8 +118,11 @@ export const DetailItems = () => {
                                     className="form-control"
                                     id="jki"
                                     type="text"
-                                    name="name"
-                                    placeholder=""
+                                    required
+                                    onChange={(e) =>
+                                      setEstimasiPengeluaran(e.target.value)
+                                    }
+                                    value={estimasiPengeluaran}
                                   />
                                 </div>
                               </div>
@@ -95,8 +132,11 @@ export const DetailItems = () => {
                                   <input
                                     className="form-control"
                                     type="text"
-                                    name="name"
-                                    placeholder=""
+                                    required
+                                    onChange={(e) =>
+                                      setNamaBarang(e.target.value)
+                                    }
+                                    value={namaBarang}
                                   />
                                 </div>
                               </div>
@@ -106,8 +146,11 @@ export const DetailItems = () => {
                                   <input
                                     className="form-control"
                                     type="text"
-                                    name="name"
-                                    placeholder=""
+                                    required
+                                    onChange={(e) =>
+                                      setKuantitas(e.target.value)
+                                    }
+                                    value={kuantitas}
                                   />
                                 </div>
                               </div>
@@ -115,7 +158,7 @@ export const DetailItems = () => {
                             <ul className="list-inline pull-right mt-3">
                               <li>
                                 <Button
-                                  type="link"
+                                  type="submit"
                                   className="default-btn next-step"
                                   href="/selesai"
                                 >
@@ -127,6 +170,7 @@ export const DetailItems = () => {
                           <div className="clearfix"></div>
                         </div>
                       </form>
+                      {Error && <div className="error-msg">{Error}</div>}
                     </div>
                   </div>
                 </div>

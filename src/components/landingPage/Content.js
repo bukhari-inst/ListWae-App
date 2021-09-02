@@ -19,7 +19,7 @@ export const Content = () => {
               className="rounded mx-auto d-block"
               src={Image_Content_1}
               alt="heroimage"
-              style={{ width: 862, height: 586 }}
+              style={{ width: 1000, height: 586 }}
             />
           </div>
         </Fade>

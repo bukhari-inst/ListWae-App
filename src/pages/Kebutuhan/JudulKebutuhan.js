@@ -1,8 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'pages/Kebutuhan/style.css';
 import Button from 'elements/Button';
+import { auth, db } from 'config/Firebase';
 
-export const JudulKebutuhan = () => {
+export const JudulKebutuhan = (props) => {
+  const [kebutuhan, setKebutuhan] = useState('');
+  const [tgl, setTgl] = useState('');
+
+  const [Error, setError] = useState('');
+
+  const handleKebutuhanSubmit = (e) => {
+    e.preventDefault();
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        db.collection('judulKebutuhan')
+          .add({
+            judulKebutuhan: kebutuhan,
+            tgl: tgl,
+          })
+          .then(() => {
+            setKebutuhan('');
+            setTgl('');
+            props.history.push('/detailitems');
+          })
+          .catch((err) => setError(err.message));
+      } else {
+        console.log('user is not signed in to add database');
+      }
+    });
+  };
+
   return (
     <div>
       <div className="modal-dialog modal-dialog-centered" role="document">
@@ -53,7 +80,11 @@ export const JudulKebutuhan = () => {
                           </li>
                         </ul>
                       </div>
-                      <form role="form" action="" className="login-box">
+                      <form
+                        role="form"
+                        className="login-box"
+                        onSubmit={handleKebutuhanSubmit}
+                      >
                         <div className="tab-content" id="main_form">
                           <div
                             className="tab-pane active"
@@ -71,8 +102,11 @@ export const JudulKebutuhan = () => {
                                     className="form-control"
                                     id="jki"
                                     type="text"
-                                    name="name"
-                                    placeholder=""
+                                    required
+                                    onChange={(e) =>
+                                      setKebutuhan(e.target.value)
+                                    }
+                                    value={kebutuhan}
                                   />
                                 </div>
                               </div>
@@ -82,8 +116,9 @@ export const JudulKebutuhan = () => {
                                   <input
                                     className="form-control"
                                     type="date"
-                                    name="name"
-                                    placeholder=""
+                                    required
+                                    onChange={(e) => setTgl(e.target.value)}
+                                    value={tgl}
                                   />
                                 </div>
                               </div>
@@ -91,7 +126,7 @@ export const JudulKebutuhan = () => {
                             <ul className="list-inline pull-right mt-3">
                               <li>
                                 <Button
-                                  type="link"
+                                  type="submit"
                                   className="default-btn next-step"
                                   href="/detailitems"
                                 >
@@ -103,6 +138,7 @@ export const JudulKebutuhan = () => {
                           <div className="clearfix"></div>
                         </div>
                       </form>
+                      {Error && <div className="error-msg">{Error}</div>}
                     </div>
                   </div>
                 </div>
